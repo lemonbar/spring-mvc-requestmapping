@@ -26,15 +26,26 @@ public class GreetingController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login() {
+    public String login(){
+        return "login";
+    }
+//    public ModelAndView login() {
+//        User user = new User();
+//        user.setFirstName("li");
+//        user.setLastName("meng");
+//        return new ModelAndView("login").addObject(user);
+//    }
+
+    @ModelAttribute
+    public User addUser(){
         User user = new User();
         user.setFirstName("li");
         user.setLastName("meng");
-        return new ModelAndView("login").addObject(user);
+        return user;
     }
 
     @RequestMapping("/test")
-    public String test(User user) {
+    public String test(@ModelAttribute User user) {
         return user.getFirstName();
     }
 }
