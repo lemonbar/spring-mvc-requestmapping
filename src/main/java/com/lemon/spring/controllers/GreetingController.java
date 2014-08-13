@@ -27,6 +27,7 @@ public class GreetingController {
     @RequestMapping("/greeting/{userName}")
     @ResponseBody
     public String greeting(@PathVariable(value = "userName") String name) {
+        //直接将返回输出到html body中.
         return "Hello " + name;
     }
 
