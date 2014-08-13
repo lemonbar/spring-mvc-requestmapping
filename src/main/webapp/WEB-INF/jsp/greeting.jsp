@@ -4,7 +4,7 @@
 </head>
 <body>
 <h1>
-    I am lemon!
+    I am ${name}!
 </h1>
 </body>
 </html>
